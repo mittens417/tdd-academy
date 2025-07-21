@@ -241,13 +241,13 @@ class TodoExercisesTest {
         // 4. Assert the average weight is 170.25
         
         // Your code here:
-//         List<Animal> animals = Arrays.asList(simba, nala);
-//         when(animalRepository.findAll()).thenReturn(animals);
-//
-//         double averageWeight = animalService.getAverageWeight();
-//
-//         verify(animalRepository, times(1)).findAll();
-//         assertEquals(170.25, averageWeight, 0.01, "This test have passed");
+         List<Animal> animals = Arrays.asList(simba, nala);
+         when(animalRepository.findAll()).thenReturn(animals);
+
+         double averageWeight = animalService.getAverageWeight();
+
+         verify(animalRepository, times(1)).findAll();
+         assertEquals(170.25, averageWeight, 0.01, "This test have passed");
     }
 
     @Test
@@ -262,16 +262,16 @@ class TodoExercisesTest {
         //    - message: "New animal Simba has been added to the zoo."
         
         // Your code here:
-//         simba.setId(1L);
-//         when(animalRepository.save(any(Animal.class))).thenReturn(simba);
-//
-//         zooManager.addNewAnimal(simba);
-//
-//         verify(notificationService).sendEmail(
-//             "staff@zoo.com",
-//             "New Animal Added",
-//             "New animal Simba has been added to the zoo."
-//         );
+         simba.setId(1L);
+         when(animalRepository.save(any(Animal.class))).thenReturn(simba);
+
+         zooManager.addNewAnimal(simba);
+
+         verify(notificationService).sendEmail(
+             "staff@zoo.com",
+             "New Animal Added",
+             "New animal Simba has been added to the zoo."
+         );
     }
 
     @Test
@@ -287,17 +287,17 @@ class TodoExercisesTest {
         // 4. Verify that animalRepository.findById(1L) was called exactly once
         
         // Your code here:
-//         simba.setId(1L);
-//         simba.setHealthStatus("Sick");
-//         when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
-//
-//         zooManager.checkAnimalHealth(1L);
-//
-//         verify(notificationService, times(1)).sendEmail(
-//             eq("vet@zoo.com"),
-//             eq("Animal Health Alert"),
-//             contains("1")
-//         );
-//         verify(animalRepository, times(1)).findById(1L);
+         simba.setId(1L);
+         simba.setHealthStatus("Sick");
+         when(animalRepository.findById(1L)).thenReturn(Optional.of(simba));
+
+         zooManager.checkAnimalHealth(1L);
+
+         verify(notificationService, times(1)).sendEmail(
+             eq("vet@zoo.com"),
+             eq("Animal Health Alert"),
+             contains("1")
+         );
+         verify(animalRepository, times(1)).findById(1L);
     }
 } 
