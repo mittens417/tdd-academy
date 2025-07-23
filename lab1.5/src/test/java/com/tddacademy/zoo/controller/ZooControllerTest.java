@@ -62,7 +62,7 @@ class ZooControllerTest {
         // 2. Add expectation for status().isNotFound()
         
         // Your code here:
-        // mockMvc.perform(get("/api/zoos/999"))
-        //     .andExpect(...);
+         mockMvc.perform(get("/api/zoos/999"))
+             .andExpect(status().isNotFound());
     }
 } 
