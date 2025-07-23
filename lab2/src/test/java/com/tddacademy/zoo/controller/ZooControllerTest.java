@@ -177,9 +177,9 @@ class ZooControllerTest {
         // 3. Add expectation for status().isNoContent()
         
         // Your code here:
-        // doNothing().when(zooService).deleteZoo(1L);
-        // mockMvc.perform(delete("/api/zoos/1"))
-        //     .andExpect(...);
+         doNothing().when(zooService).deleteZoo(1L);
+         mockMvc.perform(delete("/api/zoos/1"))
+             .andExpect(status().isNoContent());
     }
 
     @Test
@@ -191,9 +191,9 @@ class ZooControllerTest {
         // 3. Add expectation for status().isNotFound()
         
         // Your code here:
-        // doThrow(new IllegalArgumentException("Zoo not found with id: 999")).when(zooService).deleteZoo(999L);
-        // mockMvc.perform(delete("/api/zoos/999"))
-        //     .andExpect(...);
+         doThrow(new IllegalArgumentException("Zoo not found with id: 999")).when(zooService).deleteZoo(999L);
+         mockMvc.perform(delete("/api/zoos/999"))
+             .andExpect(status().isNotFound());
     }
 
     @Test
