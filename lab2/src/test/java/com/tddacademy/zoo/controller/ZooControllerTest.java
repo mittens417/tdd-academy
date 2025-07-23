@@ -214,10 +214,10 @@ class ZooControllerTest {
         // 2. Add expectation for status().isBadRequest()
         
         // Your code here:
-        // mockMvc.perform(put("/api/zoos/1")
-        //         .contentType(MediaType.APPLICATION_JSON)
-        //         .content("{ invalid json }"))
-        //     .andExpect(...);
+         mockMvc.perform(put("/api/zoos/1")
+                 .contentType(MediaType.APPLICATION_JSON)
+                 .content("{ invalid json }"))
+             .andExpect(status().isBadRequest());
     }
 
     @Test
